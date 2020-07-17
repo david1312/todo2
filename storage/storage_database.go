@@ -95,3 +95,4 @@ func (o structDb) Update(cust model.Customer, id int32) error {
 }
 
 //coba git
+//this is master code
