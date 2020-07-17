@@ -9,7 +9,7 @@ import (
 
 func ConnectDb() *sql.DB {
 	db, err := sql.Open("postgres",
-		"host=127.0.0.1 port=5432 user=postgres "+
+		"host=postgres port=5432 user=postgres "+
 			"password=password dbname=db sslmode=disable")
 
 	if err != nil {

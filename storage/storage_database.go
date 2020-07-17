@@ -8,6 +8,12 @@ import (
 
 type structDb struct{}
 
+// func (o structDb) CreateTCus() error {
+// 	db := model.ConnectDb()
+// 	_, err := db.Exec("CREATE TABLE customers (id int,name varchar(200),address varchar(200)," +
+// 		"phone varchar(20),birthdate date)")
+// 	return err
+// }
 func (o structDb) List() ([]model.Customer, error) {
 	db := model.ConnectDb()
 	rows, err := db.Query("SELECT id,name, address, phone, birthdate FROM customers ORDER BY id asc LIMIT 10;")
@@ -32,6 +38,10 @@ func (o structDb) List() ([]model.Customer, error) {
 
 func (o structDb) Create(obj model.Customer) error {
 	db := model.ConnectDb()
+
+	//buat create table
+	// _, err2 := db.Exec("CREATE TABLE customers (id int,name varchar(200),address varchar(200)," +
+	// 	"phone varchar(20),birthdate date)")
 	// menghindari sql Injection
 	_, err2 := db.Exec("INSERT INTO customers (id, name, address, phone, birthdate) VALUES "+
 		"($1, $2, $3, $4, $5);",

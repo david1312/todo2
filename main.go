@@ -15,11 +15,13 @@ func main() {
 	//inisialisasi
 	//var memStore = storage.NewMemory()
 	var memStore = storage.GetStorage(storage.StorageTypeDatabase)
+	//
+	// if err := memStore.Create
 	//CREATE
 	if err := memStore.Create(model.Customer{
-		ID:        7,
-		Name:      "Mr H",
-		Address:   "Mock 2",
+		ID:        2,
+		Name:      "Mr B",
+		Address:   "WEWORK NOBLE HOUSE",
 		Phone:     "081279393023",
 		BirthDate: "2020-10-08",
 	}); err != nil {
@@ -41,7 +43,7 @@ func main() {
 		Address:   "Mock 2 UPDATED",
 		Phone:     "081279393023",
 		BirthDate: "2020-10-08",
-	}, 6); err != nil {
+	}, 3); err != nil {
 		log.Fatal(err)
 	}
 	emoji.Println("Update Success :grin:")
