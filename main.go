@@ -19,8 +19,8 @@ func main() {
 	// if err := memStore.Create
 	//CREATE
 	if err := memStore.Create(model.Customer{
-		ID:        2,
-		Name:      "Mr B",
+		ID:        3,
+		Name:      "Mr C",
 		Address:   "WEWORK NOBLE HOUSE",
 		Phone:     "081279393023",
 		BirthDate: "2020-10-08",
