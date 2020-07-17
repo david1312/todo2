@@ -93,3 +93,5 @@ func (o structDb) Update(cust model.Customer, id int32) error {
 	//$ -> cara ngedefine variable di postgreSQL
 	return err //kalau gagal return error
 }
+
+//coba git
